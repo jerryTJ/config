@@ -1,0 +1,25 @@
+name: Docker Build and Push
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: liuzhidocker
+          password: 494238284@qq.com
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -t liuzhidocker/ansbile:v1.0.0 .
+
+      - name: Push Docker image
+        run: |
+          docker push liuzhidocker/ansbile:v1.0.0
