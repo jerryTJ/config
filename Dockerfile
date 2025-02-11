@@ -16,11 +16,5 @@ RUN mkdir -p /etc/ansible/
 # 设置默认工作目录
 WORKDIR /ansible
 
-# 复制 inventory 文件
-COPY inventory /etc/ansible/hosts
-
-# 复制 Ansible Playbook（如果有）
-COPY playbook.yml /ansible/playbook.yml
-
 # 运行 Ansible 命令
-CMD ["ansible-playbook", "/ansible/playbook.yml"]
+CMD ["/bin/sh" "-c" "sleep infinity"]
