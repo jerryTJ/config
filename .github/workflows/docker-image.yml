@@ -18,8 +18,8 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t liuzhidocker/ansbile:v1.0.0 .
+          docker build -t liuzhidocker/ansible:v1.0.0 .
 
       - name: Push Docker image
         run: |
-          docker push liuzhidocker/ansbile:v1.0.0
+          docker push liuzhidocker/ansible:v1.0.0
